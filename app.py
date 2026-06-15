@@ -22,16 +22,11 @@ layout="wide"
 
 @st.cache_resource
 def load_models():
-kmeans = pickle.load(open("kmeans_model.pkl", "rb"))
-scaler = pickle.load(open("scaler.pkl", "rb"))
-similarity_df = pickle.load(open("similarity_matrix_small.pkl", "rb"))
+    kmeans = pickle.load(open("kmeans_model.pkl", "rb"))
+    scaler = pickle.load(open("scaler.pkl", "rb"))
+    similarity_df = pickle.load(open("similarity_matrix_small.pkl", "rb"))
 
-```
-return kmeans, scaler, similarity_df
-```
-
-kmeans, scaler, similarity_df = load_models()
-
+    return kmeans, scaler, similarity_df
 # ==========================
 
 # SIDEBAR
