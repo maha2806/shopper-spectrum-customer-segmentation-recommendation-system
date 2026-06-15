@@ -1,101 +1,47 @@
+# 🛒 Shopper Spectrum: Customer Segmentation and Product Recommendation System
 
-# Shopper Spectrum: Customer Segmentation and Product Recommendations in E-Commerce
+## 📌 Project Overview
 
-## Project Overview
+This project focuses on analyzing customer purchasing behavior in an e-commerce environment. Using transaction data, customers are segmented through RFM (Recency, Frequency, Monetary) analysis and K-Means clustering. Additionally, an item-based collaborative filtering recommendation system is developed to provide personalized product recommendations.
 
-This project focuses on analyzing customer purchasing behavior in an e-commerce environment using transaction-level retail data. The primary goal is to identify meaningful customer segments through RFM (Recency, Frequency, Monetary) analysis and develop an item-based collaborative filtering recommendation system.
-
-The project combines Exploratory Data Analysis (EDA), Customer Segmentation, Product Recommendation, Machine Learning, and Streamlit deployment to generate actionable business insights.
+The project helps businesses improve customer retention, targeted marketing, and product recommendation strategies.
 
 ---
 
-## Business Problem
+## 🎯 Business Objective
 
-E-commerce businesses generate large volumes of transactional data daily. Understanding customer purchasing behavior and recommending relevant products are critical for:
+The primary objective of this project is to identify meaningful customer segments and recommend relevant products based on historical purchasing behavior.
 
-* Personalized marketing campaigns
-* Customer retention strategies
-* Inventory optimization
-* Product recommendation systems
-* Revenue growth initiatives
+The solution supports:
+
+* Customer Segmentation for targeted marketing
+* Personalized Product Recommendations
+* Customer Retention Strategies
+* Cross-Selling and Upselling Opportunities
+* Inventory and Demand Planning
 
 ---
 ## Dataset link :https://drive.google.com/file/d/1rzRwxm_CJxcRzfoo9Ix37A2JTlMummY-/view
-## Dataset Information
+ ---
 
-The dataset contains online retail transaction records including:
+## 📂 Dataset Information
 
-* Invoice Number
-* Product Code
-* Product Description
-* Quantity Purchased
-* Transaction Date
-* Unit Price
-* Customer ID
-* Customer Country
+The dataset contains e-commerce transaction records including:
 
----
-
-## Project Workflow
-
-### 1. Data Preprocessing
-
-* Handle missing values
-* Remove cancelled transactions
-* Remove invalid quantities and prices
-* Feature engineering
-
-### 2. Exploratory Data Analysis
-
-* Country-wise transaction analysis
-* Product popularity analysis
-* Revenue trends
-* Customer spending analysis
-* RFM distribution analysis
-
-### 3. Customer Segmentation
-
-* RFM Feature Creation
-* Data Standardization
-* K-Means Clustering
-* Elbow Method
-* Silhouette Score Evaluation
-* Cluster Interpretation
-
-### 4. Product Recommendation System
-
-* Customer-Product Matrix
-* Cosine Similarity
-* Item-Based Collaborative Filtering
-* Top Product Recommendations
-
-### 5. Streamlit Application
-
-#### Product Recommendation Module
-
-Input:
-
-* Product Name
-
-Output:
-
-* Top 5 Similar Products
-
-#### Customer Segmentation Module
-
-Input:
-
-* Recency
-* Frequency
-* Monetary
-
-Output:
-
-* Customer Segment Label
+| Column      | Description                |
+| ----------- | -------------------------- |
+| InvoiceNo   | Transaction Number         |
+| StockCode   | Product Code               |
+| Description | Product Name               |
+| Quantity    | Quantity Purchased         |
+| InvoiceDate | Transaction Date           |
+| UnitPrice   | Product Price              |
+| CustomerID  | Unique Customer Identifier |
+| Country     | Customer Country           |
 
 ---
 
-## Technologies Used
+## ⚙️ Technologies Used
 
 * Python
 * Pandas
@@ -103,34 +49,156 @@ Output:
 * Matplotlib
 * Seaborn
 * Scikit-Learn
-* KMeans Clustering
-* Cosine Similarity
 * Streamlit
+* K-Means Clustering
+* Collaborative Filtering
+* Cosine Similarity
 
 ---
 
-## Customer Segments
+## 🧹 Data Preprocessing
 
-* High-Value Customers
-* Regular Customers
-* Occasional Customers
-* At-Risk Customers
+The following preprocessing steps were performed:
 
----
-
-## Expected Business Impact
-
-* Better customer targeting
-* Improved retention strategies
-* Personalized shopping experiences
-* Enhanced inventory planning
-* Increased revenue opportunities
+* Removed missing Customer IDs
+* Removed cancelled invoices
+* Removed negative quantities
+* Removed invalid prices
+* Removed duplicate records
+* Created Revenue feature
+* Generated RFM metrics
 
 ---
 
-## Future Enhancements
+## 📊 Exploratory Data Analysis
 
-* Hybrid Recommendation Systems
+EDA was performed to identify:
+
+* Transaction volume by country
+* Top-selling products
+* Purchase trends over time
+* Revenue distribution
+* Customer spending behavior
+* RFM distributions
+
+---
+
+## 🤖 Customer Segmentation
+
+### RFM Analysis
+
+Customers were segmented using:
+
+* Recency
+* Frequency
+* Monetary Value
+
+### Clustering Approach
+
+* StandardScaler
+* K-Means Clustering
+* Elbow Method
+* Silhouette Score
+
+### Customer Segments
+
+| Segment    | Description                                   |
+| ---------- | --------------------------------------------- |
+| High-Value | Frequent, recent, and high-spending customers |
+| Regular    | Consistent customers with moderate spending   |
+| Occasional | Infrequent customers with lower spending      |
+| At-Risk    | Customers inactive for a long period          |
+
+### Model Evaluation
+
+The optimal number of clusters was selected using:
+
+* Elbow Method
+* Silhouette Score Analysis
+
+Final Model:
+
+* Algorithm: K-Means
+* Number of Clusters: 4
+* Silhouette Score: 0.6162
+
+---
+
+## 🎯 Product Recommendation System
+
+An Item-Based Collaborative Filtering approach was implemented using Cosine Similarity.
+
+Features:
+
+* Product similarity calculation
+* Top 5 product recommendations
+* Recommendation heatmap visualization
+
+---
+
+## 📱 Streamlit Application
+
+### Product Recommendation Module
+
+Users can:
+
+* Select a product
+* Generate top 5 similar product recommendations
+
+### Customer Segmentation Module
+
+Users can enter:
+
+* Recency
+* Frequency
+* Monetary Value
+
+The application predicts the customer segment:
+
+* High-Value
+* Regular
+* Occasional
+* At-Risk
+
+---
+
+## 📁 Repository Structure
+
+Shopper-Spectrum/
+
+├── Shopper_Spectrum.ipynb
+
+├── app.py
+
+├── requirements.txt
+
+├── kmeans_model.pkl
+
+├── scaler.pkl
+
+├── similarity_matrix_small.pkl
+
+├── README.md
+
+├── LICENSE
+
+└── .gitignore
+
+---
+
+## 🚀 Future Improvements
+
+* Hybrid Recommendation System
 * Real-Time Customer Analytics
-* Dynamic Pricing Models
-* Advanced Deep Learning Recommenders
+* Deep Learning-Based Recommendations
+* Automated Marketing Campaign Suggestions
+
+---
+
+## 👩‍💻 Author
+
+Sita Bharatula
+
+Master of Computer Applications (MCA)
+
+Chandigarh University
