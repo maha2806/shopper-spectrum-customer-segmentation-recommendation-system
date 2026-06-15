@@ -52,7 +52,6 @@ page = st.sidebar.radio(
 
 if page == "Home":
 
-```
 st.title("🛒 Shopper Spectrum")
 
 st.markdown("""
